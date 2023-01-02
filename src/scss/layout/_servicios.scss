@@ -1,0 +1,32 @@
+h2 {
+    margin-top: 2.5rem;
+}
+.p-servicios {
+    text-align: center;
+}
+
+.listado-servicios {
+    @include grid( 2 , 2rem);
+
+    .elementos {
+        background-color: $blanco;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .nombre-servicio {
+        color: $negro;
+        font-size: 2.5rem;
+        margin: 1rem;
+    }
+    .precio-servicio {
+        color: $azul;
+        font-weight: $bold;
+        font-size: 3.2rem;
+        margin: 1rem;
+    }
+}
