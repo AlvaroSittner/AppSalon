@@ -35,8 +35,8 @@ async function mostrarServicios() {
             //Insertar precio y nombre al div de servicio
             servicioDiv.appendChild(nombreServicio);
             servicioDiv.appendChild(precioServicio);
-
-            console.log(servicioDiv);
+            
+            //insertarlo en el html
             document.querySelector('#servicios').appendChild(servicioDiv);
         });
     } catch (error) { 
