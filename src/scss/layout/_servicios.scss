@@ -1,14 +1,18 @@
 h2 {
     margin-top: 2.5rem;
 }
-.p-servicios {
-    text-align: center;
-}
+
 
 .listado-servicios {
-    @include grid( 2 , 2rem);
+    @include tablet {
+        @include grid( 2 , 2rem);
+        .servicio{
+            margin-bottom: 0;
+        }
+    }
 
-    .elementos {
+    .servicio {
+        margin-bottom: 2rem;
         background-color: $blanco;
         padding: 1rem;
         border-radius: 0.5rem;
