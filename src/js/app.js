@@ -31,11 +31,15 @@ async function mostrarServicios() {
             //generar el DIV contenedor de servicios
             const servicioDiv = document.createElement('DIV');
             servicioDiv.classList.add('servicio');
+            servicioDiv.dataset.idServicio = id;
+
+            //selecciona un servicio para la cita
+            servicioDiv.onclick = seleccionarServicio;
 
             //Insertar precio y nombre al div de servicio
             servicioDiv.appendChild(nombreServicio);
             servicioDiv.appendChild(precioServicio);
-            
+
             //insertarlo en el html
             document.querySelector('#servicios').appendChild(servicioDiv);
         });
@@ -43,3 +47,20 @@ async function mostrarServicios() {
         console.log(error);
     }
 } 
+
+function seleccionarServicio(e) {
+
+    let elemento;
+    //forzar a que el elemento clickeado sea el div
+    if(e.target.tagName === "P") {
+        elemento = e.target.parentElement;
+    }else {
+        elemento = e.target;
+    }
+
+    if(elemento.classList.contains('activo')){
+        elemento.classList.remove('activo');
+    } else{ 
+    elemento.classList.add('activo');
+    }
+}
