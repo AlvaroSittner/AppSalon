@@ -20,6 +20,12 @@ h2 {
         &:hover {
             cursor: pointer;
         }
+        &.activo {
+            background-color: $azul;
+            p {
+                color: $blanco;
+            }
+        }
     }
 
     .nombre-servicio {
