@@ -8,19 +8,29 @@ function iniciarApp() {
     mostrarServicios();
 
     //resalta el div actual segun el tabs presionado
+    mostrarSeccion()
 
     //oculta o muestra la seccion segun el tabs presionado
     cambiarSeccion();
 }
+function mostrarSeccion(){
+    const seccionActual = document.querySelector(`#paso-${pagina}`);
+    seccionActual.classList.add('mostrar-seccion'); 
+}
+
 function cambiarSeccion() {
     const enlaces = document.querySelectorAll('.tabs button');
 
     enlaces.forEach( enlace => {
         enlace.addEventListener('click', e => {
             e.preventDefault(); 
-
             pagina = parseInt(e.target.dataset.paso);
-            console.log(pagina)
+
+            //eliminar mostrar seccion de la seccion anterior 
+            document.querySelector('.mostrar-seccion').classList.remove('mostrar-seccion');
+            
+            const seccion = document.querySelector(`#paso-${pagina}`);
+            seccion.classList.add('mostrar-seccion');
         })
     })
 }

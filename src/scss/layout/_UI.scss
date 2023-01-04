@@ -27,5 +27,9 @@ html {
 }
 
 .seccion {
+    display: none;
     margin-top: $separacion / 2;
+}
+.mostrar-seccion {
+    display: block!important;
 }
