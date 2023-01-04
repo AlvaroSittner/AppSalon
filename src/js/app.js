@@ -16,6 +16,10 @@ function iniciarApp() {
 function mostrarSeccion(){
     const seccionActual = document.querySelector(`#paso-${pagina}`);
     seccionActual.classList.add('mostrar-seccion'); 
+
+    //resalta el tab actual 
+    const tab = document.querySelector(`[data-paso="${pagina}"]`);
+    tab.classList.add('actual');
 }
 
 function cambiarSeccion() {
@@ -28,9 +32,17 @@ function cambiarSeccion() {
 
             //eliminar mostrar seccion de la seccion anterior 
             document.querySelector('.mostrar-seccion').classList.remove('mostrar-seccion');
-            
+
+            //agrega mostrar seccion donde dimos click
             const seccion = document.querySelector(`#paso-${pagina}`);
             seccion.classList.add('mostrar-seccion');
+
+            //eliminar la clse actual del tabs anterior
+            document.querySelector('.tabs .actual').classList.remove('actual');
+
+            //agregar la clase actual en el nuevo tab
+            const tab = document.querySelector(`[data-paso="${pagina}"]`);
+            tab.classList.add('actual');
         })
     })
 }
