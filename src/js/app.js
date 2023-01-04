@@ -1,9 +1,28 @@
+let pagina = 1;
+
 document.addEventListener('DOMContentLoaded', function() {
     iniciarApp();
 }); 
 
 function iniciarApp() {
     mostrarServicios();
+
+    //resalta el div actual segun el tabs presionado
+
+    //oculta o muestra la seccion segun el tabs presionado
+    cambiarSeccion();
+}
+function cambiarSeccion() {
+    const enlaces = document.querySelectorAll('.tabs button');
+
+    enlaces.forEach( enlace => {
+        enlace.addEventListener('click', e => {
+            e.preventDefault(); 
+
+            pagina = parseInt(e.target.dataset.paso);
+            console.log(pagina)
+        })
+    })
 }
 
 async function mostrarServicios() {
